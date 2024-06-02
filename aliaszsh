@@ -1,0 +1,135 @@
+#   -----------------------------
+#     ALIAS BETTER
+#   -----------------------------
+alias c='clear'
+alias cp='cp -iv'      					                                            # preferred 'cp' implementation
+alias mv='mv -iv'                           		                                # Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                     		                                # Preferred 'mkdir' implementation
+alias chmod='chmod -c'                      		                                # Preferred 'chmod' implementation
+alias ll='ls -FGlAhp'                       		                                # Preferred 'ls' implementation
+alias lf='ls -F | grep \/$'
+alias less='less -FSRXc'                    		                                # Preferred 'less' implementation
+cd() { builtin cd "$@"; ll; }               		                                # Always list directory contents upon 'cd'
+alias cd..='cd ../'                         		                                # Go back 1 directory level (for fast typers)
+alias ..='cd ../'                           		                                # Go back 1 directory level
+alias ...='cd ../../'                       		                                # Go back 2 directory levels
+alias .3='cd ../../../'                     		                                # Go back 3 directory levels
+alias .4='cd ../../../../'                  		                                # Go back 4 directory levels
+alias .5='cd ../../../../../'               		                                # Go back 5 directory levels
+alias .6='cd ../../../../../../'            		                                # Go back 6 directory levels
+alias Downloads='cd ~/Downloads/'                                                   # Go to Donloads
+alias Desktop='cd ~/Desktop/'                                                       # Go to Desktop
+alias Documents='cd ~/Documents/'                                                   # Go to Documents
+alias edit='subl'                           		                                # edit:         Opens any file in sublime editor
+alias f='open -a Finder ./'                 		                                # f:            Opens current directory in MacOS Finder
+alias ~="cd ~"                              		                                # ~:            Go Home
+alias path='echo -e ${PATH//:/\\n}'         		                                # path:         Echo all executable Paths
+alias show_options='shopt'                  		                                # Show_options: display bash options settings
+alias fix_stty='stty sane'                  		                                # fix_stty:     Restore terminal settings when screwed up
+alias cic='set completion-ignore-case On'   		                                # cic:          Make tab-completion case-insensitive
+mcd () { mkdir -p "$1" && cd "$1"; }        		                                # mcd:          Makes new Dir and jumps inside
+trash () { command mv "$@" ~/.Trash ; }     		                                # trash:        Moves a file to the MacOS trash
+ql () { qlmanage -p "$*" >& /dev/null; }    		                                # ql:           Opens any file in MacOS Quicklook Preview
+alias DT='tee ~/Desktop/terminalOut.txt'    		                                # DT:           Pipe content to file on MacOS Desktop
+alias reload="source ~/.bash_profile"       		                                # reload        Source the bash profile
+alias dodo="pmset sleepnow"				                                            # sets your computer to sleep immediatly
+zipf () { zip -r "$1".zip "$1" ; }          		                                # zipf:         To create a ZIP archive of a folder
+alias numFiles='echo $(ls -1 | wc -l)'      		                                # numFiles:     Count of non-hidden files in current dir
+alias make1mb='mkfile 1m ./1MB.dat'         		                                # make1mb:      Creates a file of 1mb size (all zeros)
+alias make5mb='mkfile 5m ./5MB.dat'         		                                # make5mb:      Creates a file of 5mb size (all zeros)
+alias make10mb='mkfile 10m ./10MB.dat'      		                                # make10mb:     Creates a file of 10mb size (all zeros)
+findPid () { lsof -t -c "$@" ; }	    		                                    # find out the pid of a specified process
+alias topForever='top -l 9999999 -s 10 -o cpu'		                                # topForever:  Continual 'top' listing (every 10 seconds)
+alias ttop="top -R -F -s 10 -o rsize"			                                    # Recommended 'top' invocation to minimize resources
+alias myip='curl http://ipecho.net/plain; echo'                    	                # myip:         Public facing IP Address
+alias netCons='lsof -i'                             	                            # netCons:      Show all open TCP/IP sockets
+alias flushDNS='dscacheutil -flushcache'            	                            # flushDNS:     Flush out the DNS Cache
+alias lsock='sudo /usr/sbin/lsof -i -P'             	                            # lsock:        Display open sockets
+alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP'   	                            # lsockU:       Display only open UDP sockets
+alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP'   	                            # lsockT:       Display only open TCP sockets
+alias ipInfo0='ipconfig getpacket en0'              	                            # ipInfo0:      Get info on connections for en0
+alias ipInfo1='ipconfig getpacket en1'              	                            # ipInfo1:      Get info on connections for en1
+alias openPorts='sudo lsof -i | grep LISTEN'        	                            # openPorts:    All listening connections         
+alias memHogsTop='top -l 1 -o rsize | head -20'		                                # Find memory hogs
+alias memHogsPs='ps wwaxm -o pid,stat,vsize,rss,time,command | head -10'	        # Find memory hogs
+alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'		            # Find CPU hogs	
+alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"			            # Recursively delete .DS_Store files
+alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'	        # Show hidden files in Finder
+alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE' 	    # Hide hidden files in Finder
+my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; } 	        # List processes owned by my user
+#   -----------------------------
+#     GIT ALIAS BETTER
+#   -----------------------------
+alias ga='git add'                                                                  # git add
+alias gaa='git add .'                                                               # git add whole directory
+alias gaaa='git add -A'                                                             # git add 
+alias gb="git branch"
+alias gbr="git branch remote"
+alias gcm='git commit -m'                                                           # git commit with -m tag
+alias gc='git add . && git commit'                                                  # git add and commit
+alias gf="git fetch"
+alias gfa="git fetch --all"
+alias gf="git fetch origin"
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
+alias gstat='git status'
+alias gck='git checkout'
+alias gckm='git checkout master'
+alias gckb='git checkout -b'
+alias gpull='git pull'
+alias gpush='git push -u origin'
+alias gpushm='git push -u origin master'
+gitpush() {
+    git add .
+    git commit -m "$*"
+    git pull
+    git push
+}
+
+# function gc { git commit -m "$@"; }
+
+alias qfind="find . -name "                		                                        # qfind:    Quickly search for file
+ff () { /usr/bin/find . -name "$@" ; }      		                                    # ff:       Find file under the current directory
+ffs () { /usr/bin/find . -name "$@"'*' ; }  		                                    # ffs:      Find file whose name starts with a given string
+ffe () { /usr/bin/find . -name '*'"$@" ; }  		                                    # ffe:      Find file whose name ends with a given string
+alias restartdock="killall -KILL Dock"			                                            # restart dock station
+alias flog="tail -f ~/Library/Preferences/Macromedia/Flash\\ Player/Logs/flashlog.txt"		# Displays the flash traces in the terminal 
+alias trace='/Applications/Utilities/Console.app/Contents/MacOS/Console ~/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt &' # flashlog in a gui
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'                # lr: Full Recursive Directory Listing
+alias cleanupLS="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"								    # Clean up LaunchServices to remove duplicates in the "Open With" menu
+# Fix audio control issues
+alias fix-audio='sudo launchctl unload /System/Library/LaunchDaemons/com.apple.audio.coreaudiod.plist && sudo launchctl load /System/Library/LaunchDaemons/com.apple.audio.coreaudiod.plist'
+# Fix webcam issues
+alias fix-webcam='sudo killall AppleCameraAssistant && sudo killall VDCAssistant'
+
+alias k='kubectl'
+alias kx='kubectx'
+alias kb='kubens'
+alias kg='kubectl get'
+alias kgp='kubectl get pods'
+alias kgpa='kubectl get pods --all-namespaces'
+alias kgn='kubectl get nodes'
+alias kdp='kubectl describe pod'
+alias kdps='kubectl describe pods'
+alias kdn='kubectl describe node'
+alias kdns='kubectl describe nodes'
+alias kl='kubectl logs'
+alias kssh='kubectl exec -it'
+alias kgsvc='kubectl get service'
+alias kgdep='kubectl get deployments'
+
+
+alias zshrc='code ~/.zshrc'
+alias zalias='code ~/.zsh/aliaszsh'
+alias topten="history | commands | sort -rn | head"
+alias myip="curl http://ipecho.net/plain; echo"
+alias dirs='dirs -v | head -10'
+alias usage='du -h -d1'
+alias update="source ~/.zshrc"
+alias sshdir="cd ~/.ssh"
+alias runp="lsof -i "
+
+## docker
+alias dockerstop='docker-compose stop'
+alias dockerrestart='docker-compose restart'
+alias dockerup='docker-compose up -d'
+alias dockerrm='docker-compose rm --all'

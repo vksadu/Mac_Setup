@@ -1,0 +1,69 @@
+{
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "yaml.schemas": {
+      "file:///Users/vinodkumarsadu/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "atlascode.bitbucket.enabled": true,
+  "files.trimFinalNewlines": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.detectIndentation": true,
+  "editor.renderWhitespace": "all",
+  "editor.trimAutoWhitespace": true,
+  "editor.minimap.side": "right",
+  "editor.rulers": [120],
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 12,
+  "editor.renderControlCharacters": true,
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.quickSuggestions": false
+  },
+  "files.insertFinalNewline": false,
+  "csv-preview.separator": ";",
+  "csv-preview.resizeColumns": "all",
+  "[csv]": {},
+  "window.zoomLevel": 0,
+
+  "update.showReleaseNotes": false,
+  "window.restoreWindows": "none",
+  "extensions.autoCheckUpdates": true,
+  "telemetry.enableTelemetry": false,
+  "explorer.confirmDelete": false,
+  "files.exclude": {
+    ".dropbox": true,
+    ".dropbox.cache": true,
+    ".DS_Store": true,
+    "**/.git": true,
+    "**/.svn": true
+  },
+
+  "terminal.integrated.fontSize": 12,
+  //"workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Monokai",
+  "workbench.iconTheme": "file-icons-colourless",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#313641",
+    "statusBar.foreground": "#fff",
+    "statusBar.noFolderBackground": "#313641",
+    "statusBar.noFolderForeground": "#fff"
+  },
+  "markdown.extension.preview.autoShowPreviewToSide": false,
+  "markdown.extension.italic.indicator": "_",
+  "markdown.extension.syntax.decorations": false,
+  "markdown.extension.orderedList.autoRenumber": false,
+  "markdown.extension.tableFormatter.enabled": false,
+  "extensions.ignoreRecommendations": true,
+
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+
+  "terminal.integrated.inheritEnv": false,
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true
+}
