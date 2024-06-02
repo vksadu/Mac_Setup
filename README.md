@@ -58,7 +58,10 @@ This script automates the setup of a macOS developer environment with essential 
 3. **Make Executable:**
     ```bash
     chmod +x setup.sh
-4. Follow Instructions: The script will guide you through any additional steps required (e.g., adding your SSH key to GitHub, configuring Malwarebytes).
+4. **Run:**
+    ```bash
+    ./setup.sh
+5. Follow Instructions: The script will guide you through any additional steps required (e.g., adding your SSH key to GitHub, configuring Malwarebytes).
 
 ## Configuration Files
 
