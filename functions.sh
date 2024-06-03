@@ -64,39 +64,39 @@ function ii() {
   echo
 }
 
-# Function to generate SSH key
-function sshKeyGen(){
-  echo "What's the name of the Key (no spaces please)? ";
-  read name;
-  echo "What's the email associated with it? ";
-  read email;
-  ssh-keygen -t rsa -f ~/.ssh/id_rsa_$name -C "$email";
-  ssh-add ~/.ssh/id_rsa_$name
-  pbcopy < ~/.ssh/id_rsa_$name.pub;
-  echo "SSH Key copied in your clipboard";
-}
+# # Function to generate SSH key
+# function sshKeyGen(){
+#   echo "What's the name of the Key (no spaces please)? ";
+#   read name;
+#   echo "What's the email associated with it? ";
+#   read email;
+#   ssh-keygen -t rsa -f ~/.ssh/id_rsa_$name -C "$email";
+#   ssh-add ~/.ssh/id_rsa_$name
+#   pbcopy < ~/.ssh/id_rsa_$name.pub;
+#   echo "SSH Key copied in your clipboard";
+# }
 
-# Function to generate a random password
-function randpassw() {
-  if [ -z $1 ]; then
-    MAXSIZE=10
-  else
-    MAXSIZE=$1
-  fi
-  array1=( 
-    q w e r t y u i o p a s d f g h j k l z x c v b n m Q W E R T Y U I O P A S D 
-    F G H J K L Z X C V B N M 1 2 3 4 5 6 7 8 9 0 
-    \! \@ \$ \% \^ \& \* \! \@ \$ \% \^ \& \* \@ \$ \% \^ \& \* 
-  ) 
-  MODNUM=${#array1[*]} 
-  pwd_len=0 
-  while [ $pwd_len -lt $MAXSIZE ]; do 
-    index=$(($RANDOM%$MODNUM)) 
-    echo -n "${array1[$index]}" 
-    ((pwd_len++)) 
-  done 
-  echo 
-}
+# # Function to generate a random password
+# function randpassw() {
+#   if [ -z $1 ]; then
+#     MAXSIZE=10
+#   else
+#     MAXSIZE=$1
+#   fi
+#   array1=( 
+#     q w e r t y u i o p a s d f g h j k l z x c v b n m Q W E R T Y U I O P A S D 
+#     F G H J K L Z X C V B N M 1 2 3 4 5 6 7 8 9 0 
+#     \! \@ \$ \% \^ \& \* \! \@ \$ \% \^ \& \* \@ \$ \% \^ \& \* 
+#   ) 
+#   MODNUM=${#array1[*]} 
+#   pwd_len=0 
+#   while [ $pwd_len -lt $MAXSIZE ]; do 
+#     index=$(($RANDOM%$MODNUM)) 
+#     echo -n "${array1[$index]}" 
+#     ((pwd_len++)) 
+#   done 
+#   echo 
+# }
 
 # Function to create a tree view of the current directory
 function tree(){
