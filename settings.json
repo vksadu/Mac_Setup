@@ -1,7 +1,7 @@
 {
   "terminal.integrated.shell.osx": "/bin/zsh",
   "yaml.schemas": {
-      "file:///Users/vinodkumarsadu/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+      "file:///Users/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "atlascode.bitbucket.enabled": true,
   "files.trimFinalNewlines": true,
